@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.NoSuchElementException;
-import java.util.Random;
 
 class Heap {
   private int[] array;
