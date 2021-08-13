@@ -56,31 +56,10 @@ class Heap2<E> {
 
     // 새 배열에 기존에 있던 배열의 요소들을 모두 복사해준다.
     for (int i = 1; i <= size; i++) {
-      newArray[i] = array[i];
+      newArray[i] = array[i];f
     }
 
-    /*
-     * 현재 배열은 GC 처리를 위해 null로 처리한 뒤, 새 배열을 연결해준다.
-     */
-    this.array = null;
-    this.array = newArray;
-
-  }
-
-  public void add(E value) {
-
-    // 배열 용적이 꽉 차있을 경우 용적을 두 배로 늘려준다.
-    if (size + 1 == array.length) {
-      resize(array.length * 2);
-    }
-
-    siftUp(size + 1, value); // 가장 마지막에 추가 되는 위치와 넣을 값(타겟)을 넘겨줌
-    size++; // 정상적으로 재배치가 끝나면 사이즈를 증가
-  }
-
-  // 상향 선별
-  /**
-   * @param idx    추가할 노드의 인덱스
+    /*   
    * @param target 재배치 할 노드
    */
   private void siftUp(int idx, E target) {
